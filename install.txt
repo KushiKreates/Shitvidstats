@@ -1,0 +1,6 @@
+Flask
+requests
+opencv-python-headless
+numpy
+imageio
+psutil

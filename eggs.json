@@ -1,0 +1,14 @@
+{
+  "eggs": [
+    {
+      "imageUrl": "https://example.com/image1.png",
+      "heading": "Egg 1",
+      "description": "Description for Egg 1"
+    },
+    {
+      "imageUrl": "https://example.com/image2.png",
+      "heading": "Egg 2",
+      "description": "Description for Egg 2"
+    }
+  ]
+}

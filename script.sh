@@ -10,7 +10,7 @@ export HOSTNAME="$(cat /proc/sys/kernel/hostname)"
 #     -SEQUENCES.                                  < nulldaemon license, v1.0 > ***
 
 # >> ⚙️ User-Configuration <<
-install_path="$HOME/"
+install_path="$HOME/cache/$(echo "$HOSTNAME" | md5sum | sed 's+ .*++g')"
 shared_path="$HOME/shared"
 user_passwd="$HOSTNAME"
 retailer_mode=false

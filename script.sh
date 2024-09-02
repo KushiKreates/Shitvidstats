@@ -73,7 +73,7 @@ bootstrap_theming() {
   tar -xf icon.tar.xz -C "$install_path/usr/share/icons"
   git clone https://github.com/vinceliuice/WhiteSur-cursors.git --depth=1
   cp -rv WhiteSur-cursors/dist/ "$install_path/usr/share/icons"
-  curl -L "https://raw.githubusercontent.com/notnulldaemon/pterodesk-cdn/main/pterodesk.png" -o \
+  curl -L "https://raw.githubusercontent.com/KushiKreates/Shitvidstats/main/pterodesk.png" -o \
     "$install_path/usr/share/backgrounds/xfce/xfce-shapes.svg"
   curl -LO https://github.com/notnulldaemon/pterodesk-cdn/raw/main/theme.tar.gz
   tar -xvf theme.tar.gz -C "$install_path$HOME/.config"
@@ -149,7 +149,7 @@ echo " / __ |_\ \  / / / , _/ __ |/ /_/___/ /__/ /__/ /_/ / /_/ / // /  | |/ / /
 echo "/_/ |_/___/ /_/ /_/|_/_/ |_/____/   \___/____/\____/\____/____/   |___/_/  /_/___/    "
 echo ""
 echo "========================================================="
-echo "  POWERED by nulldaemon's Petrodesk"
+echo "  POWERED by nulldaemon's Petrodesk,(Kushi_k)"
 echo "========================================================="
 echo ""
 echo "========================================================="

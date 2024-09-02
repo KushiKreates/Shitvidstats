@@ -141,15 +141,26 @@ EOF
 run_system() {
   #!/bin/bash
 
- echo "   ___   _____________  ___   __      _______   ____  __  _____    _   ____  _______  "
- echo "  / _ | / __/_  __/ _ \/ _ | / / ____/ ___/ /  / __ \/ / / / _ \  | | / /  |/  / __/  "
- echo " / __ |_\ \  / / / , _/ __ |/ /_/___/ /__/ /__/ /_/ / /_/ / // /  | |/ / /|_/ /\ \    "
- echo "/_/ |_/___/ /_/ /_/|_/_/ |_/____/   \___/____/\____/\____/____/   |___/_/  /_/___/    "
- echo ""
- echo "POWERED by nulldaemon's Petrodesk"
- echo "How to use my virtual machine? Please head over to https://<your server ip adress with port> and enter your server's id as the password "
- echo "========================================================================================"
- echo "©️2024, Astral-Cloud (The best hosting provider!)"
+    #!/bin/bash
+
+echo "   ___   _____________  ___   __      _______   ____  __  _____    _   ____  _______  "
+echo "  / _ | / __/_  __/ _ \/ _ | / / ____/ ___/ /  / __ \/ / / / _ \  | | / /  |/  / __/  "
+echo " / __ |_\ \  / / / , _/ __ |/ /_/___/ /__/ /__/ /_/ / /_/ / // /  | |/ / /|_/ /\ \    "
+echo "/_/ |_/___/ /_/ /_/|_/_/ |_/____/   \___/____/\____/\____/____/   |___/_/  /_/___/    "
+echo ""
+echo "========================================================="
+echo "  POWERED by nulldaemon's Petrodesk"
+echo "========================================================="
+echo ""
+echo "========================================================="
+echo "  HOW TO USE MY VIRTUAL MACHINE?"
+echo "========================================================="
+echo "Please head over to $(curl https://checkip.pterodactyl-installer.se/ 2>/dev/null):$SERVER_PORT"
+echo "and use server ID as the password."
+echo ""
+echo "========================================================================================"
+echo "©️ 2024, Astral-Cloud (The best hosting provider!)"
+
 
   # abort if file
   if [ -f "$HOME/.do-not-start" ]; then

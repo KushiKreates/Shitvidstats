@@ -161,7 +161,7 @@ run_system() {
   echo "and use server ID as the password."
   echo ""
   echo "========================================================================================"
-  echo "©️ 2024, Astral-Cloud (The best hosting provider!)"
+  echo "©️ 2024, Astral-Cloud (The best hosting provider!) Beta v-1"
 
 
   # Check if file exists

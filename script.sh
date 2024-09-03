@@ -89,6 +89,10 @@ bootstrap_system() {
 
   _CHECKPOINT=$PWD
 
+  mkdir -p /tmp/.X11-unix
+  chmod 1777 /tmp/.X11-unix
+
+
   d.stat "Initializing the Alpine rootfs image..."
   curl -L "$mirror_alpine" -o a.tar.gz && tar -xf a.tar.gz || die
   rm -rf a.tar.gz

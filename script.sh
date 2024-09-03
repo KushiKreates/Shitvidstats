@@ -174,23 +174,23 @@ run_system() {
 
   # Function to start NoVNC and VNC server
   start_services() {
-    # Starting NoVNC
-    $install_path/dockerd --kill-on-exit -r $install_path -b /dev -b /proc -b /sys -b /tmp -w "/usr/lib/noVNC" /bin/sh -c \
-      "./utils/novnc_proxy --vnc localhost:5901 --listen 0.0.0.0:$SERVER_PORT --cert self.crt --key self.key --ssl-only" &>/dev/null &
+  echo "Starting services..." >> /var/log/my_script.log
+  $install_path/dockerd --kill-on-exit -r $install_path -b /dev -b /proc -b /sys -b /tmp -w "/usr/lib/noVNC" /bin/sh -c \
+    "./utils/novnc_proxy --vnc localhost:5901 --listen 0.0.0.0:$SERVER_PORT --cert self.crt --key self.key --ssl-only" &>> /var/log/my_script.log &
 
-    # Set up VNCPasswd
-    chmod 0600 "$install_path$HOME/.vnc/passwd" # prerequisite
+  chmod 0600 "$install_path$HOME/.vnc/passwd" # prerequisite
 
-    $DOCKER_RUN "export PATH=$install_path/bin:$install_path/usr/bin:$PATH HOME=$install_path$HOME LD_LIBRARY_PATH='$install_path/usr/lib:$install_path/lib:/usr/lib:/usr/lib64:/lib64:/lib'; \
-      cd $install_path$HOME; \
-      export MOZ_DISABLE_CONTENT_SANDBOX=1 \
-      MOZ_DISABLE_SOCKET_PROCESS_SANDBOX=1 \
-      MOZ_DISABLE_RDD_SANDBOX=1 \
-      MOZ_DISABLE_GMP_SANDBOX=1 \
-      HOME='$install_path$HOME' \
-      HOSTNAME=pterodesk; \
-      $(if_x86_64 "vglrun -d egl") vncserver :0" &>/dev/null
-  }
+  $DOCKER_RUN "export PATH=$install_path/bin:$install_path/usr/bin:$PATH HOME=$install_path$HOME LD_LIBRARY_PATH='$install_path/usr/lib:$install_path/lib:/usr/lib:/usr/lib64:/lib64:/lib'; \
+    cd $install_path$HOME; \
+    export MOZ_DISABLE_CONTENT_SANDBOX=1 \
+    MOZ_DISABLE_SOCKET_PROCESS_SANDBOX=1 \
+    MOZ_DISABLE_RDD_SANDBOX=1 \
+    MOZ_DISABLE_GMP_SANDBOX=1 \
+    HOME='$install_path$HOME' \
+    HOSTNAME=pterodesk; \
+    $(if_x86_64 "vglrun -d egl") vncserver :0" &>> /var/log/my_script.log
+}
+
 
   # Keep the service alive indefinitely
   while true; do

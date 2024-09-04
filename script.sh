@@ -189,7 +189,7 @@ run_system() {
       MOZ_DISABLE_GMP_SANDBOX=1 \
       HOME='$install_path$HOME' \
       HOSTNAME=pterodesk; \
-      $(if_x86_64 "vglrun -d egl") vncserver :0" &>/dev/null
+      $(if_x86_64 "vglrun -d egl") vncserver :0"
   }
 
 
